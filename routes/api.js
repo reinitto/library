@@ -102,11 +102,12 @@ module.exports = function(app) {
     .post(function(req, res) {
       var bookid = req.params.id;
       var comment = req.body.comment;
+      console.log("bookID:", bookid);
       if (!bookid) {
         res.send("Book id required");
       } else {
         Book.findOneAndUpdate(
-          bookid,
+          { _id: bookid },
           { $push: { comments: comment }, $inc: { commentcount: 1 } },
           { new: true, select: "-__v" },
           (err, book) => {
@@ -114,6 +115,7 @@ module.exports = function(app) {
               res.send("invalid book ID");
             } else {
               console.log("Res.status: ", res.status == 200);
+              console.log("book:", book);
               res.json(book);
             }
           }

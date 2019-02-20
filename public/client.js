@@ -81,6 +81,7 @@ $(document).ready(function() {
   });
 
   $("#bookDetail").on("click", "button.addComment", function() {
+    console.log("id:", this.id);
     var newComment = $("#commentToAdd").val();
     $.ajax({
       url: "/api/books/" + this.id,
