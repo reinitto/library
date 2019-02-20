@@ -1,25 +1,114 @@
-.border {
-  border-style: inset;
-  border-width: 1px;
-  margin: 10px;
-}
-
-#sampleui {
-  max-width: 450px;
-  margin-left: 5%;
+html {
+  width: 100%;
   height: 100%;
 }
 
+body {
+  margin: 0;
+  width: 100%;
+  height: 100%;
+  display: -ms-grid;
+  display: grid;
+  -ms-grid-columns: 1fr 1fr;
+      grid-template-columns: 1fr 1fr;
+  -ms-grid-rows: auto;
+      grid-template-rows: auto;
+      grid-template-areas: "head head" "sampleui  userstories";
+}
+
 #sampleposting {
-  max-width: 450px;
+  display: none;
+}
+
+header {
   text-align: center;
-  margin-left: 5%;
+  -ms-grid-row: 1;
+  -ms-grid-column: 1;
+  -ms-grid-column-span: 2;
+  grid-area: head;
+}
+
+#sampleui {
+  -ms-grid-row: 2;
+  -ms-grid-column: 1;
+  grid-area: sampleui;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  -webkit-perspective: 20vw;
+          perspective: 20vw;
+}
+
+#newBookForm {
+  margin: 10px auto;
+}
+
+#bookTitleToAdd {
+  padding: 10px;
+  width: 250px;
+}
+
+#newBook {
+  margin: 5px;
+  color: white;
+  background-color: black;
+  padding: 15px 10px;
+}
+
+.bookItem {
+  min-height: 30px;
+  margin: 15px 10px;
+  background-image: -webkit-gradient(linear, left top, right top, from(#e66465), to(#9198e5));
+  background-image: linear-gradient(90deg, #e66465, #9198e5);
+  border: 2px solid black;
+  -webkit-box-shadow: 5px 5px 5px 2px darkblue, -3px 3px 2px darkblue;
+          box-shadow: 5px 5px 5px 2px darkblue, -3px 3px 2px darkblue;
+}
+
+.bookItem h3 {
+  text-align: center;
+}
+
+.bookItem .comments {
+  text-align: end;
+}
+
+ul {
+  list-style-type: none;
+}
+
+li {
+  -webkit-transition: all 0.2s ease-in-out;
+  transition: all 0.2s ease-in-out;
+}
+
+.bookItem:hover {
+  background-image: -webkit-gradient(linear, right top, left top, from(#e66465), to(#9198e5));
+  background-image: linear-gradient(-90deg, #e66465, #9198e5);
+  -webkit-transform: rotate3d(1, 0, 0, -35deg);
+          transform: rotate3d(1, 0, 0, -35deg);
+  -webkit-transform-origin: bottom;
+          transform-origin: bottom;
+}
+
+#display {
+  width: 100%;
+  -webkit-transform-style: preserve-3d;
+          transform-style: preserve-3d;
+  -webkit-transform: rotateX(30deg);
+          transform: rotateX(30deg);
 }
 
 #userstories {
-  margin-left: 5%;
+  -ms-grid-row: 2;
+  -ms-grid-column: 2;
+  grid-area: userstories;
 }
-
-form {
-  padding: 5px;
-}
+/*# sourceMappingURL=style.css.map */
