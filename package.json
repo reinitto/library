@@ -4,7 +4,7 @@
   "description": "boilerplate",
   "main": "server.js",
   "scripts": {
-    "start": "nodemon server.js"
+    "start": "node server.js"
   },
   "dependencies": {
     "body-parser": "^1.15.2",
@@ -22,10 +22,6 @@
   },
   "engines": {
     "node": "10"
-  },
-  "repository": {
-    "type": "git",
-    "url": "https://hyperdev.com/#!/project/welcome-project"
   },
   "keywords": [
     "node",
